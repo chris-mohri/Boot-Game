@@ -52,7 +52,7 @@ public class SlotController : MonoBehaviour
     {
         //Debug.Log("drag");
 
-        if (locked==false) {
+        if (locked==true) {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position=mousePosition; 
         }

@@ -8,9 +8,11 @@ public class Mini_Game_Controller : MonoBehaviour
     public PlayerControls controls;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         controls = new PlayerControls();
+
+        Debug.Log("minigame started");
     }
 
     // Update is called once per frame
@@ -19,5 +21,14 @@ public class Mini_Game_Controller : MonoBehaviour
         if (controls.Keyboard.Q.ReadValue<float>()==1){
             Debug.Log("q");
         }
+
+    }
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+    private void OnDisable()
+    {
+        controls.Disable();
     }
 }

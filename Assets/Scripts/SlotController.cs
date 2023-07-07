@@ -19,14 +19,17 @@ public class SlotController : MonoBehaviour
     //private HandleDragAndDrop drag_drop;
 
     //// OTHER INFO
+    
     private Vector2 initialDragXY;
+    private bool locked;
     private bool drag_started;
    
     void Awake()
     {
-        //drag_drop=GameObject.FindWithTag("UI").GetComponent<HandleDragAndDrop>();
-        drag_started=false;
-        Debug.Log("awake");
+        //drag_started=false;
+
+        locked=true;
+        initialDragXY=transform.position;
     }
 
 
@@ -48,6 +51,11 @@ public class SlotController : MonoBehaviour
     void OnMouseDrag()
     {
         //Debug.Log("drag");
+
+        if (locked==false) {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position=mousePosition; 
+        }
 
     }
 

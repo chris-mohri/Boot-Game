@@ -79,6 +79,10 @@ public class Hardware_Controller : MonoBehaviour
             Deplete();
             Debug.Log(efficiency_current);
         }
+
+        text.text=efficiency_max.ToString()+"\n\n"+efficiency_current.ToString()+"\n\n"+depletion_rate.ToString();
+
+
     }
 
 

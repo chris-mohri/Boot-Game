@@ -6,9 +6,13 @@ using UnityEngine.UIElements;
 public class GPU_Mini_Game : MonoBehaviour
 {
     [SerializeField]
+    private Hardware_Controller hardware_controller;
+    [SerializeField]
     private Sprite[] sprites;
+
     private SpriteRenderer sprite_renderer;
     private Sprite current_sprite;
+    private bool sequence_playing;
 
     // 0 - Left
     // 1 - Up
@@ -25,7 +29,7 @@ public class GPU_Mini_Game : MonoBehaviour
     {
         sprite_renderer = GetComponent<SpriteRenderer>();
         current_sprite = sprite_renderer.sprite;
-        
+        sequence_playing = false;
     }
 
     // Update is called once per frame
@@ -36,6 +40,7 @@ public class GPU_Mini_Game : MonoBehaviour
 
     private void OnEnable()
     {
+        sequence_playing = true;
         correct_sequence = new List<int>();
         input_sequence = new List<int>();
         Generate_Sequence(5);
@@ -46,28 +51,41 @@ public class GPU_Mini_Game : MonoBehaviour
 
     void Generate_Sequence(int length)
     {
+        string test = "";
         System.Random random = new System.Random();
         for(int i=0; i<length; i++)
         {
-            //Debug.Log("Pooopy");
-            correct_sequence.Add(random.Next(6));
+            int next = random.Next(6);
+            test += next + " ";
+            correct_sequence.Add(next);
         }
+        Debug.Log(test);
     }
 
 
     IEnumerator Play_Sequence()
     {
+        sequence_playing = true;
         yield return new WaitForSeconds(1);
         for(int i=0; i<correct_sequence.Count; i++)
         {
             sprite_renderer.sprite = sprites[correct_sequence[i]];
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.5f);
+            sprite_renderer.sprite = current_sprite;
+            yield return new WaitForSeconds(.1f);
         }
-        sprite_renderer.sprite = current_sprite;
+        sequence_playing = false;
+        //sprite_renderer.sprite = current_sprite;
     }
 
     void Check_Sequence()
     {
+        if (input_sequence.Count > correct_sequence.Count)
+        {
+            Fail();
+            return;
+        }
+        
         bool fail = false;
         for(int i=0; i<input_sequence.Count; i++)
         {
@@ -86,24 +104,48 @@ public class GPU_Mini_Game : MonoBehaviour
 
     void Fail()
     {
-
+        sequence_playing = true;
+        Debug.Log("Fail");
+        input_sequence = new List<int>();
+        StartCoroutine(Screen_Flash());
     }
 
     void Win()
     {
-
+        // reset to full, close
+        //hardware_controller.Reset();
+        Debug.Log("Win");
     }
     
     public void On_Button_Down(int id)
     {
-        sprite_renderer.sprite = sprites[id];
-        input_sequence.Add(id);
+        if (!sequence_playing)
+        {
+            sprite_renderer.sprite = sprites[id];
+            input_sequence.Add(id);
+            Debug.Log(id);
 
-        Check_Sequence();
+            Check_Sequence();
+        }
     }
 
     public void On_Button_Up()
     {
+        if(!sequence_playing)
+            sprite_renderer.sprite = current_sprite;
+    }
+
+    IEnumerator Screen_Flash()
+    {
+        GameObject red_screen = transform.Find("Red Screen").gameObject;
+        for (int i = 0; i < 3; i++)
+        {
+            red_screen.SetActive(true);
+            yield return new WaitForSeconds(.25f);
+            red_screen.SetActive(false);
+            yield return new WaitForSeconds(.25f);
+        }
         sprite_renderer.sprite = current_sprite;
+        StartCoroutine(Play_Sequence());
     }
 }

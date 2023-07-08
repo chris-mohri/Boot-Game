@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,6 +9,7 @@ public class Fan_Mini_Game : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     [SerializeField]
     private Hardware_Controller hardware_controller;
 
+    private TextMeshPro text;
     private bool clockwise;
     private int revolutions;
     private float max_angle;
@@ -33,13 +35,15 @@ public class Fan_Mini_Game : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     {
         fan = transform.Find("Fan");
         end = transform.Find("End");
+        text = GetComponentInChildren<TextMeshPro>();
         System.Random r = new System.Random();
         revolutions = Get_Difficulty();
         max_angle = revolutions * 360;
         clockwise = r.Next(2) == 1;
         current_angle = 0;
         dragging = false;
-        if(clockwise)
+        text.text = "Rotations: " + revolutions;
+        if (clockwise)
         {
             max_angle *= -1;
             fan.GetComponent<SpriteRenderer>().flipY = true;
@@ -89,6 +93,10 @@ public class Fan_Mini_Game : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     void Win()
     {
         current_angle = 0;
+        if(clockwise)
+        {
+            fan.GetComponent<SpriteRenderer>().flipY = false;
+        }
         hardware_controller.Reset();
         Debug.Log("Win");
     }
@@ -145,13 +153,15 @@ public class Fan_Mini_Game : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
 
         if(clockwise)
         {
-            if(current_angle < max_angle)
+            text.text = "Rotations: " + (revolutions - (int)(current_angle / -360));
+            if (current_angle < max_angle)
             {
                 Win();
             }
         } else
         {
-            if(current_angle > max_angle)
+            text.text = "Rotations: " + (revolutions - (int)(current_angle / 360));
+            if (current_angle > max_angle)
             {
                 Win();
             }

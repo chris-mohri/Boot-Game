@@ -116,6 +116,9 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
 
         efficiency_current = efficiency_max;
 
+        //mini_game.SetActive(false);
+        //Game_State.Instance.Exited_Mini_Game();
+
 
     }
 

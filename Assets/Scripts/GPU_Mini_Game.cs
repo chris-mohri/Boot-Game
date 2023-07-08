@@ -113,7 +113,7 @@ public class GPU_Mini_Game : MonoBehaviour
     void Win()
     {
         // reset to full, close
-        //hardware_controller.Reset();
+        hardware_controller.Reset();
         Debug.Log("Win");
     }
     

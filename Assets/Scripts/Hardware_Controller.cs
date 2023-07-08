@@ -15,11 +15,16 @@ public class Hardware_Controller : MonoBehaviour
     [SerializeField]
     private Sprite image_hovered;
 
+    [SerializeField]
+    private GameObject info_box;
+
     //// OTHER INFO
     
     private Vector2 initial_DragXY;
-    private bool locked;
+   // private bool locked;
     private bool drag_started;
+
+    private bool mini_game_open;
 
 
     //[SerializeField]
@@ -29,12 +34,12 @@ public class Hardware_Controller : MonoBehaviour
     public double efficiency_current = 100.0;
 
     //[SerializeField]
-    public double depletion_rate = 1.50; // depletes efficiency_max by 1.5 per second
+    public double depletion_rate = 5; // depletes efficiency_max by 5 per second. programs will affect this
 
     //[SerializeField]
-    public double depletion_multiplier = 1.00; //multiplier for depletion_rate
+    public double depletion_multiplier = 1.00; //base multiplier for depletion_rate
 
-    private double additional_multipliers = 0.00;
+    private double additional_multipliers = 0.00; // other hardware will affect this
 
     SpriteRenderer sprite_renderer;
  
@@ -44,10 +49,12 @@ public class Hardware_Controller : MonoBehaviour
     {
         //drag_started=false;
         initial_DragXY = new Vector2(0,0);
-        locked=true;
+        info_box.SetActive(false);
+        //locked=true;
         initial_DragXY=transform.position;
 
         sprite_renderer = gameObject.GetComponent<SpriteRenderer>();
+        mini_game_open=false;
     }
 
     //  EVENTS ------------------------------------------------------------------------------------------------
@@ -75,14 +82,18 @@ public class Hardware_Controller : MonoBehaviour
     // MOUSE EVENTS ------------------------------------------------------------------------------------------------
 
      void OnMouseOver(){
-        Debug.Log("Mouse is over GameObject.");
-        sprite_renderer.sprite = image_hovered;
+
+        if (mini_game_open==false) {
+            sprite_renderer.sprite = image_hovered;
+            info_box.SetActive(true);
+        }
         //image_displayed = image_hovered;
         
     }
 
     void OnMouseExit(){
         sprite_renderer.sprite = image_idle;
+        info_box.SetActive(false);
     }
 
     void OnMouseDown(){

@@ -18,7 +18,7 @@ public class Mini_Game_Controller : MonoBehaviour
     {
         if (controls.Keyboard.Q.ReadValue<float>()==1){
             Debug.Log("q");
-            Game_State.Instance.Start_Game();
+            //Game_State.Instance.Start_Game();
         }
 
     }

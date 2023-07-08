@@ -90,6 +90,10 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
         additional_multipliers += mult;
     }
 
+    public double Get_Percent_Efficiency(){
+        return (Math.Round(efficiency_current / efficiency_max, 2));
+    }
+
     void Deplete(){
         double total_depletion_multiplier = depletion_multiplier + additional_multipliers;
         if (total_depletion_multiplier<0.4)
@@ -117,9 +121,16 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
         efficiency_current = efficiency_max;
 
         //mini_game.SetActive(false);
+        StartCoroutine(Wait_Reset());
         //Game_State.Instance.Exited_Mini_Game();
+       
+    }
 
-
+    IEnumerator Wait_Reset()
+    {
+        mini_game.SetActive(false);
+        yield return new WaitForSeconds(.25f);
+        Game_State.Instance.Exited_Mini_Game();
     }
 
     void Update(){

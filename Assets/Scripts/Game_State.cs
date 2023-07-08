@@ -9,7 +9,7 @@ public class Game_State : MonoBehaviour
 
     [SerializeField]
     private Desktop_Manager desktop_manager;
-    
+
     private bool game_started;
     private int money;
 
@@ -19,19 +19,29 @@ public class Game_State : MonoBehaviour
     private float storage_penalty;
     private float cooling_penalty;
 
+    private double happiness;
+
     void Awake()
     {
         Instance = this;
 
         game_started = false;
         money=0;
+        happiness=100;
+    }
+
+    public void Add_Happiness(double val){
+        happiness += val;
+        if (happiness<0) happiness = 0;
+
+
     }
 
 
     // Update is called once 
     void Update()
     {
-        
+        //Debug.Log(happiness);
     }
 
     public bool Get_Game_Started(){

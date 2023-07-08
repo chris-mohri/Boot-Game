@@ -19,7 +19,7 @@ public class GPU_Mini_Game : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //input_sequence = new List<int>();
     }
 
     // Update is called once per frame

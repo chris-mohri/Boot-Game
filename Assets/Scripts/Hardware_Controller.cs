@@ -41,11 +41,18 @@ public class Hardware_Controller : MonoBehaviour
 
     //[SerializeField]
     public double depletion_rate = 5; // depletes efficiency_max by 5 per second. programs will affect this
+    private double additional_depletion_rate=0.00;
 
     //[SerializeField]
     public double depletion_multiplier = 1.00; //base multiplier for depletion_rate
 
+    public double increase_happiness_rate = 0.8;
+
     private double additional_multipliers = 0.00; // other hardware will affect this
+
+    //boolean to determine if the component has yet to reach this threshold in its current lifespan
+    private bool half_mark;
+    private bool three_quarter_mark;
 
     SpriteRenderer sprite_renderer;
  
@@ -64,6 +71,9 @@ public class Hardware_Controller : MonoBehaviour
 
         efficiency_current=efficiency_max;
 
+        half_mark=true;
+        three_quarter_mark=true;
+
     }
 
     //  EVENTS ------------------------------------------------------------------------------------------------
@@ -76,20 +86,62 @@ public class Hardware_Controller : MonoBehaviour
         if (total_depletion_multiplier<0.4)
             total_depletion_multiplier=0.4;
 
-        efficiency_current -= Time.deltaTime * depletion_rate * total_depletion_multiplier;
+        efficiency_current -= Time.deltaTime * (depletion_rate+additional_depletion_rate) * total_depletion_multiplier;
+
+        //depletes happiness
+        if (half_mark==true && efficiency_current <= efficiency_max/2){
+            Game_State.Instance.Add_Happiness(-8);
+            half_mark=false;
+        }
+        if (three_quarter_mark==true && efficiency_current <= efficiency_max/4){
+            Game_State.Instance.Add_Happiness(-18);  
+            three_quarter_mark=false;
+        }
+
         if (efficiency_current<=0) efficiency_current=0;
     }
 
+    void Reset(){
+        half_mark=true;
+        three_quarter_mark = true;
+
+        efficiency_current = efficiency_max;
+
+
+    }
+
     void Update(){
+
+        if (this.name=="GPU")
+            additional_depletion_rate = Game_State.Instance.Get_GPU_Penalty();
+
+        if (this.name=="CPU")
+            additional_depletion_rate = Game_State.Instance.Get_CPU_Penalty();
+
+        if (this.name=="HDD")
+            additional_depletion_rate = Game_State.Instance.Get_Storage_Penalty();
+
+        if (this.name=="FAN")
+            additional_depletion_rate = Game_State.Instance.Get_Cooling_Penalty();
+
+        if (this.name=="RAM")
+            additional_depletion_rate = Game_State.Instance.Get_RAM_Penalty();
+
+        double fraction = Math.Round(efficiency_current / efficiency_max,2);
+
         //if game started, start depleting
         if(Game_State.Instance.Get_Game_Started()==true){
             Deplete();
+            Game_State.Instance.Add_Happiness(Math.Round(Time.deltaTime * increase_happiness_rate * fraction,2));
+
             //Debug.Log(efficiency_current);
         }
 
-        text.text=(Math.Round(efficiency_max,2)).ToString()+"\n\n"+(Math.Round(efficiency_current,2)).ToString()+"\n\n"+(Math.Round(depletion_rate,2)).ToString();
+        
+        text.text=(Math.Round(efficiency_max,2)).ToString()+"\n\n"+(Math.Round(efficiency_current,2)).ToString()+"\n\n"+(depletion_rate + additional_depletion_rate).ToString();
         bar_fill.transform.localScale=new Vector3(1, (float)efficiency_current/(float)efficiency_max, 1);
 
+        //increases Happiness
 
     }
 

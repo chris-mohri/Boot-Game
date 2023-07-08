@@ -9,6 +9,7 @@ public class Game_State : MonoBehaviour
 
     [SerializeField]
     private Desktop_Manager desktop_manager;
+    
     private bool game_started;
     private int money;
 

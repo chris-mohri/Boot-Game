@@ -255,6 +255,7 @@ MonoBehaviour:
   image_hovered: {fileID: 1944996294, guid: 5bcba4b54685a4d4c8e1707a54f5b31a, type: 3}
   info_box: {fileID: 343453381}
   text: {fileID: 510746484}
+  bar_fill: {fileID: 721156547}
   efficiency_max: 100
   efficiency_current: 100
   depletion_rate: 1.5
@@ -771,6 +772,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &784691326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 784691328}
+  - component: {fileID: 784691327}
+  m_Layer: 0
+  m_Name: TempDeskTop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &784691327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784691326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b9b69a6497c6b439d2af8f4a8c5fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all_programs: {fileID: 0}
+  spawn_rate: 0
+  spawn_interval_initial: 20
+  spawn_interval_min: 3
+  time_to_min: 120
+--- !u!4 &784691328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784691326}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2451973, y: 2.7339144, z: 0.12034339}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &872745754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,7 +1199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123fdeb504de4ff45bccedf4285b0178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desktop_manager: {fileID: 0}
+  desktop_manager: {fileID: 784691327}
 --- !u!4 &2101700934
 Transform:
   m_ObjectHideFlags: 0

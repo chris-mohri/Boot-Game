@@ -80,7 +80,7 @@ public class Hardware_Controller : MonoBehaviour
         //if game started, start depleting
         if(Game_State.Instance.Get_Game_Started()==true){
             Deplete();
-            Debug.Log(efficiency_current);
+            //Debug.Log(efficiency_current);
         }
 
         text.text=(Math.Round(efficiency_max,2)).ToString()+"\n\n"+(Math.Round(efficiency_current,2)).ToString()+"\n\n"+(Math.Round(depletion_rate,2)).ToString();

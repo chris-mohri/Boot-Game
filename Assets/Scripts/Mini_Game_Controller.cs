@@ -18,7 +18,7 @@ public class Mini_Game_Controller : MonoBehaviour
     {
         if (controls.Keyboard.Q.WasPressedThisFrame())
         {
-            Debug.Log("q");
+            //Debug.Log("q");
             if (!Game_State.Instance.Get_Game_Started())
                 Game_State.Instance.Start_Game();
             else

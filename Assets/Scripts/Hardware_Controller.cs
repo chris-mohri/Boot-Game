@@ -74,7 +74,7 @@ public class Hardware_Controller : MonoBehaviour
         //if game started, start depleting
         if(Game_State.Instance.Get_Game_Started()==true){
             Deplete();
-            Debug.Log(efficiency_current);
+            //Debug.Log(efficiency_current);
         }
     }
 

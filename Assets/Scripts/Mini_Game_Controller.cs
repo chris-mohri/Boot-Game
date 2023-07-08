@@ -16,9 +16,13 @@ public class Mini_Game_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (controls.Keyboard.Q.ReadValue<float>()==1){
+        if (controls.Keyboard.Q.WasPressedThisFrame())
+        {
             Debug.Log("q");
-            //Game_State.Instance.Start_Game();
+            if (!Game_State.Instance.Get_Game_Started())
+                Game_State.Instance.Start_Game();
+            else
+                Game_State.Instance.Stop_Game();
         }
 
     }

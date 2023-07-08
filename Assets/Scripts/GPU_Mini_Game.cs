@@ -30,6 +30,7 @@ public class GPU_Mini_Game : MonoBehaviour
 
     private void OnEnable()
     {
+        input_sequence = new List<int>();
         Generate_Sequence(5);
     }
 

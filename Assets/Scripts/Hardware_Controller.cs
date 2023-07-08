@@ -8,9 +8,6 @@ using System;
 
 public class Hardware_Controller : MonoBehaviour
 {
-    
-    [SerializeField]
-    private Sprite image_displayed;
 
     [SerializeField]
     private Sprite image_idle;
@@ -38,6 +35,8 @@ public class Hardware_Controller : MonoBehaviour
     public double depletion_multiplier = 1.00; //multiplier for depletion_rate
 
     private double additional_multipliers = 0.00;
+
+    SpriteRenderer sprite_renderer;
  
     
    
@@ -47,6 +46,8 @@ public class Hardware_Controller : MonoBehaviour
         initial_DragXY = new Vector2(0,0);
         locked=true;
         initial_DragXY=transform.position;
+
+        sprite_renderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     //  EVENTS ------------------------------------------------------------------------------------------------
@@ -74,13 +75,14 @@ public class Hardware_Controller : MonoBehaviour
     // MOUSE EVENTS ------------------------------------------------------------------------------------------------
 
      void OnMouseOver(){
-        //Debug.Log("Mouse is over GameObject.");
-        image_displayed = image_hovered;
+        Debug.Log("Mouse is over GameObject.");
+        sprite_renderer.sprite = image_hovered;
+        //image_displayed = image_hovered;
         
     }
 
     void OnMouseExit(){
-        image_displayed = image_idle;
+        sprite_renderer.sprite = image_idle;
     }
 
     void OnMouseDown(){

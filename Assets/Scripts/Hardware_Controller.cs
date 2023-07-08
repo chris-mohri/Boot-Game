@@ -77,6 +77,7 @@ public class Hardware_Controller : MonoBehaviour
             total_depletion_multiplier=0.4;
 
         efficiency_current -= Time.deltaTime * depletion_rate * total_depletion_multiplier;
+        if (efficiency_current<=0) efficiency_current=0;
     }
 
     void Update(){
@@ -112,6 +113,14 @@ public class Hardware_Controller : MonoBehaviour
 
     void OnMouseDown(){
         //Debug.Log("down");
+        
+
+    }
+
+    void OnMouseUp(){
+        sprite_renderer.sortingOrder=1;
+        transform.position=new Vector3(transform.position.x, transform.position.y, 0); 
+
 
     }
 
@@ -121,8 +130,12 @@ public class Hardware_Controller : MonoBehaviour
         //locked==false
         if (true) {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position=mousePosition; 
+            transform.position=mousePosition;
+            transform.position=new Vector3(transform.position.x, transform.position.y, -1); 
+            
         }
+
+        sprite_renderer.sortingOrder=2;
 
     }
 

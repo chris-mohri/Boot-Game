@@ -25,6 +25,7 @@ public class GPU_Mini_Game : MonoBehaviour
     {
         sprite_renderer = GetComponent<SpriteRenderer>();
         current_sprite = sprite_renderer.sprite;
+        
     }
 
     // Update is called once per frame

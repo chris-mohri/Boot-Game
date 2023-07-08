@@ -36,9 +36,6 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
    // private bool locked;
     private bool drag_started;
 
-    private bool mini_game_open;
-
-
     //[SerializeField]
     public double efficiency_max  = 100.0;
 
@@ -75,7 +72,6 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
         initial_DragXY=transform.position;
 
         sprite_renderer = gameObject.GetComponent<SpriteRenderer>();
-        mini_game_open=false;
 
         efficiency_current=efficiency_max;
 
@@ -88,6 +84,10 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
     //  EVENTS ------------------------------------------------------------------------------------------------
     public void Add_Additional_Multiplier(double mult){
         additional_multipliers += mult;
+    }
+
+    public double Get_Percent_Efficiency(){
+        return (Math.Round(efficiency_current / efficiency_max, 2));
     }
 
     void Deplete(){
@@ -117,9 +117,16 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
         efficiency_current = efficiency_max;
 
         //mini_game.SetActive(false);
+        StartCoroutine(Wait_Reset());
         //Game_State.Instance.Exited_Mini_Game();
+       
+    }
 
-
+    IEnumerator Wait_Reset()
+    {
+        mini_game.SetActive(false);
+        yield return new WaitForSeconds(.25f);
+        Game_State.Instance.Exited_Mini_Game();
     }
 
     void Update(){

@@ -11,7 +11,7 @@ public class CPU_Game : MonoBehaviour
     private int num_remaining=0;
     private bool started;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         started=false;
        // num_remaining=0;
@@ -86,7 +86,7 @@ public class CPU_Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(num_remaining);
+    
         if (started==true){
             if (num_remaining==0){
                 Succeed();

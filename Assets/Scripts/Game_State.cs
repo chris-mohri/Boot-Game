@@ -19,6 +19,8 @@ public class Game_State : MonoBehaviour
     private float storage_penalty;
     private float cooling_penalty;
 
+    private bool in_mini_game;
+
     private double happiness;
 
     void Awake()
@@ -28,6 +30,7 @@ public class Game_State : MonoBehaviour
         game_started = false;
         money=0;
         happiness=100;
+        in_mini_game=false;
     }
 
     public void Add_Happiness(double val){
@@ -37,6 +40,17 @@ public class Game_State : MonoBehaviour
 
     }
 
+    public void Entered_Mini_Game(){
+        in_mini_game=true;
+    }
+
+    public void Exited_Mini_Game(){
+        in_mini_game=false;
+    }
+
+    public bool Get_In_Mini_Game(){
+        return in_mini_game;
+    }
 
     // Update is called once 
     void Update()

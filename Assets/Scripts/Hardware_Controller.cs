@@ -6,11 +6,13 @@ using UnityEngine.EventSystems;
 using TMPro;
 using System;
 
-public class Hardware_Controller : MonoBehaviour
+public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler,
+                              IPointerEnterHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+                            , IPointerExitHandler
 {
 
     [SerializeField]
-    private Sprite image_idle;
+    public Sprite image_idle;
 
     [SerializeField]
     private Sprite image_hovered;
@@ -23,6 +25,10 @@ public class Hardware_Controller : MonoBehaviour
 
     [SerializeField]
     private GameObject bar_fill;
+
+    [SerializeField]
+    private GameObject mini_game;
+
 
     //// OTHER INFO
     
@@ -55,6 +61,8 @@ public class Hardware_Controller : MonoBehaviour
     private bool three_quarter_mark;
 
     SpriteRenderer sprite_renderer;
+
+    private bool dragging;
  
     
    
@@ -73,6 +81,7 @@ public class Hardware_Controller : MonoBehaviour
 
         half_mark=true;
         three_quarter_mark=true;
+        dragging=false;
 
     }
 
@@ -101,11 +110,14 @@ public class Hardware_Controller : MonoBehaviour
         if (efficiency_current<=0) efficiency_current=0;
     }
 
-    void Reset(){
+    public void Reset(){
         half_mark=true;
         three_quarter_mark = true;
 
         efficiency_current = efficiency_max;
+
+        //mini_game.SetActive(false);
+        //Game_State.Instance.Exited_Mini_Game();
 
 
     }
@@ -148,48 +160,82 @@ public class Hardware_Controller : MonoBehaviour
 
     // MOUSE EVENTS ------------------------------------------------------------------------------------------------
 
-     void OnMouseOver(){
-
-        if (mini_game_open==false) {
-            sprite_renderer.sprite = image_hovered;
-            info_box.SetActive(true);
-        }
-        //image_displayed = image_hovered;
-        
+    public void OnPointerClick( PointerEventData eventData ){
+        //Debug.Log("clicked");
     }
 
-    void OnMouseExit(){
-        sprite_renderer.sprite = image_idle;
-        info_box.SetActive(false);
-    }
-
-    void OnMouseDown(){
-        //Debug.Log("down");
-        
-
-    }
-
-    void OnMouseUp(){
+    public void OnEndDrag( PointerEventData eventData ){
         sprite_renderer.sortingOrder=1;
         transform.position=new Vector3(transform.position.x, transform.position.y, 0); 
+        dragging=false;
 
 
     }
+    public void OnBeginDrag( PointerEventData eventData ){
+        dragging=true;
+    }
 
-    void OnMouseDrag(){
-        //Debug.Log("drag");
+    public void OnDrag( PointerEventData eventData ){
 
         //locked==false
-        if (true) {
+        if (Game_State.Instance.Get_In_Mini_Game()==false) {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position=mousePosition;
             transform.position=new Vector3(transform.position.x, transform.position.y, -1); 
-            
-        }
+            sprite_renderer.sortingOrder=2;
 
-        sprite_renderer.sortingOrder=2;
+        }
+    }
+    
+    public void OnPointerDown( PointerEventData eventData ){
 
     }
+ 
+    public void OnPointerUp( PointerEventData eventData ){
+       if (dragging==false && Game_State.Instance.Get_In_Mini_Game()==false) {
+            Game_State.Instance.Entered_Mini_Game();
+
+            mini_game.SetActive(true);
+
+            if (this.name=="GPU"){
+
+            }
+
+            if (this.name=="CPU"){
+                mini_game.GetComponent<CPU_Game>().Start_Game();
+
+            }
+
+            if (this.name=="HDD"){
+
+            }
+
+            if (this.name=="FAN"){
+
+            }
+
+            if (this.name=="RAM"){
+
+            }
+
+        } 
+    }
+    
+     public void OnDrop( PointerEventData eventData )
+     {
+     }
+     public void OnPointerEnter( PointerEventData eventData )
+     {
+        if (Game_State.Instance.Get_In_Mini_Game()==false) {
+            sprite_renderer.sprite = image_hovered;
+            info_box.SetActive(true);
+        }
+     }
+     public void OnPointerExit( PointerEventData eventData )
+     {
+        sprite_renderer.sprite = image_idle;
+        info_box.SetActive(false);
+     }
 
  }
 

@@ -37,7 +37,7 @@ public class Hardware_Controller : MonoBehaviour
     public double efficiency_max  = 100.0;
 
     //[SerializeField]
-    public double efficiency_current = 100.0;
+    private double efficiency_current = 100.0;
 
     //[SerializeField]
     public double depletion_rate = 5; // depletes efficiency_max by 5 per second. programs will affect this
@@ -61,6 +61,9 @@ public class Hardware_Controller : MonoBehaviour
 
         sprite_renderer = gameObject.GetComponent<SpriteRenderer>();
         mini_game_open=false;
+
+        efficiency_current=efficiency_max;
+
     }
 
     //  EVENTS ------------------------------------------------------------------------------------------------

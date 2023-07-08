@@ -1069,6 +1069,7 @@ GameObject:
   - component: {fileID: 288360573}
   - component: {fileID: 288360575}
   - component: {fileID: 288360574}
+  - component: {fileID: 288360576}
   m_Layer: 0
   m_Name: card-3
   m_TagString: Untagged
@@ -1084,7 +1085,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288360572}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.66, y: 0, z: 0}
+  m_LocalPosition: {x: -0.66, y: 0, z: -1}
   m_LocalScale: {x: 0.25740027, y: 0.2941712, z: 0.7619048}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1109,7 +1110,7 @@ MonoBehaviour:
   kiwi_pic: {fileID: 21300000, guid: e1fcd090af789624aab95f7a51eab217, type: 3}
   blueberry_pic: {fileID: 21300000, guid: e46f015ee5a9f434890b3862a036334d, type: 3}
   strawberry_pic: {fileID: 21300000, guid: 169b9e4dca0c24a4ebd7484130c5c8e1, type: 3}
-  cardback_pick: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
+  cardback_pic: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
 --- !u!212 &288360575
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1162,6 +1163,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &288360576
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288360572}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1.3333334}
+    newSize: {x: 0.4, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+  m_EdgeRadius: 0
 --- !u!1 &301588671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,6 +1219,7 @@ GameObject:
   - component: {fileID: 301588672}
   - component: {fileID: 301588674}
   - component: {fileID: 301588673}
+  - component: {fileID: 301588675}
   m_Layer: 0
   m_Name: card-5
   m_TagString: Untagged
@@ -1188,7 +1235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301588671}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.22, y: 0.5, z: 0}
+  m_LocalPosition: {x: -0.22, y: 0.5, z: -1}
   m_LocalScale: {x: 0.25740027, y: 0.2941712, z: 0.7619048}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1213,7 +1260,7 @@ MonoBehaviour:
   kiwi_pic: {fileID: 21300000, guid: e1fcd090af789624aab95f7a51eab217, type: 3}
   blueberry_pic: {fileID: 21300000, guid: e46f015ee5a9f434890b3862a036334d, type: 3}
   strawberry_pic: {fileID: 21300000, guid: 169b9e4dca0c24a4ebd7484130c5c8e1, type: 3}
-  cardback_pick: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
+  cardback_pic: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
 --- !u!212 &301588674
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1266,6 +1313,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &301588675
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301588671}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1.3333334}
+    newSize: {x: 0.4, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+  m_EdgeRadius: 0
 --- !u!1 &320712412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,6 +1580,7 @@ GameObject:
   - component: {fileID: 345913759}
   - component: {fileID: 345913761}
   - component: {fileID: 345913760}
+  - component: {fileID: 345913762}
   m_Layer: 0
   m_Name: card-12
   m_TagString: Untagged
@@ -1503,7 +1596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345913758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.66, y: -0.5, z: 0}
+  m_LocalPosition: {x: -0.66, y: -0.5, z: -1}
   m_LocalScale: {x: 0.25740027, y: 0.2941712, z: 0.7619048}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1528,7 +1621,7 @@ MonoBehaviour:
   kiwi_pic: {fileID: 21300000, guid: e1fcd090af789624aab95f7a51eab217, type: 3}
   blueberry_pic: {fileID: 21300000, guid: e46f015ee5a9f434890b3862a036334d, type: 3}
   strawberry_pic: {fileID: 21300000, guid: 169b9e4dca0c24a4ebd7484130c5c8e1, type: 3}
-  cardback_pick: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
+  cardback_pic: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
 --- !u!212 &345913761
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1581,6 +1674,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &345913762
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345913758}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1.3333334}
+    newSize: {x: 0.4, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+  m_EdgeRadius: 0
 --- !u!1 &366002927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,6 +1730,7 @@ GameObject:
   - component: {fileID: 366002928}
   - component: {fileID: 366002930}
   - component: {fileID: 366002929}
+  - component: {fileID: 366002931}
   m_Layer: 0
   m_Name: card-2
   m_TagString: Untagged
@@ -1607,7 +1746,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366002927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22, y: 0, z: 0}
+  m_LocalPosition: {x: 0.22, y: 0, z: -1}
   m_LocalScale: {x: 0.25740027, y: 0.2941712, z: 0.7619048}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1632,7 +1771,7 @@ MonoBehaviour:
   kiwi_pic: {fileID: 21300000, guid: e1fcd090af789624aab95f7a51eab217, type: 3}
   blueberry_pic: {fileID: 21300000, guid: e46f015ee5a9f434890b3862a036334d, type: 3}
   strawberry_pic: {fileID: 21300000, guid: 169b9e4dca0c24a4ebd7484130c5c8e1, type: 3}
-  cardback_pick: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
+  cardback_pic: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
 --- !u!212 &366002930
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1685,6 +1824,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &366002931
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366002927}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1.3333334}
+    newSize: {x: 0.4, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+  m_EdgeRadius: 0
 --- !u!1 &389819793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,7 +2348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &433873722
 Transform:
   m_ObjectHideFlags: 0
@@ -2909,6 +3093,7 @@ GameObject:
   - component: {fileID: 600110090}
   - component: {fileID: 600110092}
   - component: {fileID: 600110091}
+  - component: {fileID: 600110093}
   m_Layer: 0
   m_Name: card-6
   m_TagString: Untagged
@@ -2924,7 +3109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600110089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0.22, y: 0.5, z: -1}
   m_LocalScale: {x: 0.25740027, y: 0.2941712, z: 0.7619048}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2949,7 +3134,7 @@ MonoBehaviour:
   kiwi_pic: {fileID: 21300000, guid: e1fcd090af789624aab95f7a51eab217, type: 3}
   blueberry_pic: {fileID: 21300000, guid: e46f015ee5a9f434890b3862a036334d, type: 3}
   strawberry_pic: {fileID: 21300000, guid: 169b9e4dca0c24a4ebd7484130c5c8e1, type: 3}
-  cardback_pick: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
+  cardback_pic: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
 --- !u!212 &600110092
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3002,6 +3187,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &600110093
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600110089}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1.3333334}
+    newSize: {x: 0.4, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+  m_EdgeRadius: 0
 --- !u!1 &627425232
 GameObject:
   m_ObjectHideFlags: 0
@@ -4478,6 +4708,7 @@ GameObject:
   - component: {fileID: 976291778}
   - component: {fileID: 976291780}
   - component: {fileID: 976291779}
+  - component: {fileID: 976291781}
   m_Layer: 0
   m_Name: card-9
   m_TagString: Untagged
@@ -4493,7 +4724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976291777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.66, y: 0.5, z: 0}
+  m_LocalPosition: {x: -0.66, y: 0.5, z: -1}
   m_LocalScale: {x: 0.25740027, y: 0.2941712, z: 0.7619048}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4518,7 +4749,7 @@ MonoBehaviour:
   kiwi_pic: {fileID: 21300000, guid: e1fcd090af789624aab95f7a51eab217, type: 3}
   blueberry_pic: {fileID: 21300000, guid: e46f015ee5a9f434890b3862a036334d, type: 3}
   strawberry_pic: {fileID: 21300000, guid: 169b9e4dca0c24a4ebd7484130c5c8e1, type: 3}
-  cardback_pick: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
+  cardback_pic: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
 --- !u!212 &976291780
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4571,6 +4802,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &976291781
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976291777}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1.3333334}
+    newSize: {x: 0.4, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+  m_EdgeRadius: 0
 --- !u!1 &1001364539
 GameObject:
   m_ObjectHideFlags: 0
@@ -5554,6 +5830,7 @@ GameObject:
   - component: {fileID: 1115030495}
   - component: {fileID: 1115030497}
   - component: {fileID: 1115030496}
+  - component: {fileID: 1115030498}
   m_Layer: 0
   m_Name: card-7
   m_TagString: Untagged
@@ -5569,7 +5846,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115030494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.22, y: -0.5, z: 0}
+  m_LocalPosition: {x: -0.22, y: -0.5, z: -1}
   m_LocalScale: {x: 0.25740027, y: 0.2941712, z: 0.7619048}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5594,7 +5871,7 @@ MonoBehaviour:
   kiwi_pic: {fileID: 21300000, guid: e1fcd090af789624aab95f7a51eab217, type: 3}
   blueberry_pic: {fileID: 21300000, guid: e46f015ee5a9f434890b3862a036334d, type: 3}
   strawberry_pic: {fileID: 21300000, guid: 169b9e4dca0c24a4ebd7484130c5c8e1, type: 3}
-  cardback_pick: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
+  cardback_pic: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
 --- !u!212 &1115030497
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5647,6 +5924,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1115030498
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115030494}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1.3333334}
+    newSize: {x: 0.4, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+  m_EdgeRadius: 0
 --- !u!1 &1138988478
 GameObject:
   m_ObjectHideFlags: 0
@@ -6044,6 +6366,7 @@ GameObject:
   - component: {fileID: 1188074846}
   - component: {fileID: 1188074848}
   - component: {fileID: 1188074847}
+  - component: {fileID: 1188074849}
   m_Layer: 0
   m_Name: card-1
   m_TagString: Untagged
@@ -6059,7 +6382,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188074845}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.231, y: 0.006, z: 0}
+  m_LocalPosition: {x: -0.231, y: 0.006, z: -1}
   m_LocalScale: {x: 0.25740027, y: 0.2941712, z: 0.7619048}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6084,7 +6407,7 @@ MonoBehaviour:
   kiwi_pic: {fileID: 21300000, guid: e1fcd090af789624aab95f7a51eab217, type: 3}
   blueberry_pic: {fileID: 21300000, guid: e46f015ee5a9f434890b3862a036334d, type: 3}
   strawberry_pic: {fileID: 21300000, guid: 169b9e4dca0c24a4ebd7484130c5c8e1, type: 3}
-  cardback_pick: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
+  cardback_pic: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
 --- !u!212 &1188074848
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6137,6 +6460,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1188074849
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188074845}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1.3333334}
+    newSize: {x: 0.4, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+  m_EdgeRadius: 0
 --- !u!1 &1220608814
 GameObject:
   m_ObjectHideFlags: 0
@@ -6940,6 +7308,7 @@ GameObject:
   - component: {fileID: 1366693030}
   - component: {fileID: 1366693032}
   - component: {fileID: 1366693031}
+  - component: {fileID: 1366693033}
   m_Layer: 0
   m_Name: card-10
   m_TagString: Untagged
@@ -6955,7 +7324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366693029}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.66, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0.66, y: -0.5, z: -1}
   m_LocalScale: {x: 0.25740027, y: 0.2941712, z: 0.7619048}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6980,7 +7349,7 @@ MonoBehaviour:
   kiwi_pic: {fileID: 21300000, guid: e1fcd090af789624aab95f7a51eab217, type: 3}
   blueberry_pic: {fileID: 21300000, guid: e46f015ee5a9f434890b3862a036334d, type: 3}
   strawberry_pic: {fileID: 21300000, guid: 169b9e4dca0c24a4ebd7484130c5c8e1, type: 3}
-  cardback_pick: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
+  cardback_pic: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
 --- !u!212 &1366693032
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7033,6 +7402,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1366693033
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366693029}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1.3333334}
+    newSize: {x: 0.4, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+  m_EdgeRadius: 0
 --- !u!1 &1405863129
 GameObject:
   m_ObjectHideFlags: 0
@@ -8255,6 +8669,7 @@ GameObject:
   - component: {fileID: 1654689339}
   - component: {fileID: 1654689341}
   - component: {fileID: 1654689340}
+  - component: {fileID: 1654689342}
   m_Layer: 0
   m_Name: card-11
   m_TagString: Untagged
@@ -8270,7 +8685,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654689338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.66, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0.66, y: 0.5, z: -1}
   m_LocalScale: {x: 0.25740027, y: 0.2941712, z: 0.7619048}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8295,7 +8710,7 @@ MonoBehaviour:
   kiwi_pic: {fileID: 21300000, guid: e1fcd090af789624aab95f7a51eab217, type: 3}
   blueberry_pic: {fileID: 21300000, guid: e46f015ee5a9f434890b3862a036334d, type: 3}
   strawberry_pic: {fileID: 21300000, guid: 169b9e4dca0c24a4ebd7484130c5c8e1, type: 3}
-  cardback_pick: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
+  cardback_pic: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
 --- !u!212 &1654689341
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8348,6 +8763,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1654689342
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654689338}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1.3333334}
+    newSize: {x: 0.4, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+  m_EdgeRadius: 0
 --- !u!1 &1663733556
 GameObject:
   m_ObjectHideFlags: 0
@@ -8359,6 +8819,7 @@ GameObject:
   - component: {fileID: 1663733557}
   - component: {fileID: 1663733559}
   - component: {fileID: 1663733558}
+  - component: {fileID: 1663733560}
   m_Layer: 0
   m_Name: card-4
   m_TagString: Untagged
@@ -8374,7 +8835,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663733556}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.66, y: 0, z: 0}
+  m_LocalPosition: {x: 0.66, y: 0, z: -1}
   m_LocalScale: {x: 0.25740027, y: 0.2941712, z: 0.7619048}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8399,7 +8860,7 @@ MonoBehaviour:
   kiwi_pic: {fileID: 21300000, guid: e1fcd090af789624aab95f7a51eab217, type: 3}
   blueberry_pic: {fileID: 21300000, guid: e46f015ee5a9f434890b3862a036334d, type: 3}
   strawberry_pic: {fileID: 21300000, guid: 169b9e4dca0c24a4ebd7484130c5c8e1, type: 3}
-  cardback_pick: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
+  cardback_pic: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
 --- !u!212 &1663733559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8452,6 +8913,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1663733560
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663733556}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1.3333334}
+    newSize: {x: 0.4, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+  m_EdgeRadius: 0
 --- !u!1 &1672795795
 GameObject:
   m_ObjectHideFlags: 0
@@ -8817,6 +9323,7 @@ GameObject:
   - component: {fileID: 1715641449}
   - component: {fileID: 1715641451}
   - component: {fileID: 1715641450}
+  - component: {fileID: 1715641452}
   m_Layer: 0
   m_Name: card-8
   m_TagString: Untagged
@@ -8832,7 +9339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715641448}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0.22, y: -0.5, z: -1}
   m_LocalScale: {x: 0.25740027, y: 0.2941712, z: 0.7619048}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8857,7 +9364,7 @@ MonoBehaviour:
   kiwi_pic: {fileID: 21300000, guid: e1fcd090af789624aab95f7a51eab217, type: 3}
   blueberry_pic: {fileID: 21300000, guid: e46f015ee5a9f434890b3862a036334d, type: 3}
   strawberry_pic: {fileID: 21300000, guid: 169b9e4dca0c24a4ebd7484130c5c8e1, type: 3}
-  cardback_pick: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
+  cardback_pic: {fileID: 21300000, guid: 6af49f85197a5ae40aff7a17baf905ab, type: 3}
 --- !u!212 &1715641451
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8910,6 +9417,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1715641452
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715641448}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1.3333334}
+    newSize: {x: 0.4, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+  m_EdgeRadius: 0
 --- !u!1 &1734185655
 GameObject:
   m_ObjectHideFlags: 0

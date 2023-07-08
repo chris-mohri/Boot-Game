@@ -222,6 +222,8 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
             }
 
             if (this.name=="RAM"){
+                mini_game.GetComponent<RAM_Game>().Start_Game();
+
 
             }
 

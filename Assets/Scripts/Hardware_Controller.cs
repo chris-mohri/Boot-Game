@@ -36,9 +36,6 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
    // private bool locked;
     private bool drag_started;
 
-    private bool mini_game_open;
-
-
     //[SerializeField]
     public double efficiency_max  = 100.0;
 
@@ -75,7 +72,6 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
         initial_DragXY=transform.position;
 
         sprite_renderer = gameObject.GetComponent<SpriteRenderer>();
-        mini_game_open=false;
 
         efficiency_current=efficiency_max;
 

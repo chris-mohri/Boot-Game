@@ -18,6 +18,9 @@ public class Hardware_Controller : MonoBehaviour
     [SerializeField]
     private GameObject info_box;
 
+    [SerializeField]
+    private TextMeshPro text;
+
     //// OTHER INFO
     
     private Vector2 initial_DragXY;
@@ -74,7 +77,7 @@ public class Hardware_Controller : MonoBehaviour
         //if game started, start depleting
         if(Game_State.Instance.Get_Game_Started()==true){
             Deplete();
-            //Debug.Log(efficiency_current);
+            Debug.Log(efficiency_current);
         }
     }
 

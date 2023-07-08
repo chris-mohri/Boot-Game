@@ -89,7 +89,8 @@ public class RAM_Game : MonoBehaviour
         int num_pairs = 2+extra;
 
         //DELETE LATER ============================================== >:(
-        num_pairs = 6;
+        //num_pairs=r.Next(5)+2;
+        //num_pairs = 6;
 
         //card list
         List<int> list = new List<int>();

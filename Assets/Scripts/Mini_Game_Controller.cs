@@ -11,8 +11,6 @@ public class Mini_Game_Controller : MonoBehaviour
     void Awake()
     {
         controls = new PlayerControls();
-
-        Debug.Log("minigame started");
     }
 
     // Update is called once per frame
@@ -20,6 +18,7 @@ public class Mini_Game_Controller : MonoBehaviour
     {
         if (controls.Keyboard.Q.ReadValue<float>()==1){
             Debug.Log("q");
+            Game_State.Instance.Start_Game();
         }
 
     }

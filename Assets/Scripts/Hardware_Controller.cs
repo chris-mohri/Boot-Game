@@ -21,6 +21,9 @@ public class Hardware_Controller : MonoBehaviour
     [SerializeField]
     private TextMeshPro text;
 
+    [SerializeField]
+    private GameObject bar_fill;
+
     //// OTHER INFO
     
     private Vector2 initial_DragXY;
@@ -80,7 +83,8 @@ public class Hardware_Controller : MonoBehaviour
             Debug.Log(efficiency_current);
         }
 
-        text.text=efficiency_max.ToString()+"\n\n"+efficiency_current.ToString()+"\n\n"+depletion_rate.ToString();
+        text.text=(Math.Round(efficiency_max,2)).ToString()+"\n\n"+(Math.Round(efficiency_current,2)).ToString()+"\n\n"+(Math.Round(depletion_rate,2)).ToString();
+        bar_fill.transform.localScale=new Vector3(1, (float)efficiency_current/(float)efficiency_max, 1);
 
 
     }

@@ -2739,7 +2739,7 @@ MonoBehaviour:
   efficiency_max: 120
   depletion_rate: 4
   depletion_multiplier: 1
-  increase_happiness_rate: 0.8
+  increase_happiness_rate: 6
 --- !u!61 &470931105
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4709,7 +4709,7 @@ MonoBehaviour:
   efficiency_max: 90
   depletion_rate: 3
   depletion_multiplier: 1
-  increase_happiness_rate: 0.8
+  increase_happiness_rate: 4
 --- !u!61 &889440794
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8781,7 +8781,7 @@ MonoBehaviour:
   efficiency_max: 100
   depletion_rate: 1.5
   depletion_multiplier: 1
-  increase_happiness_rate: 0.8
+  increase_happiness_rate: 8
 --- !u!61 &1274397982
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9354,7 +9354,7 @@ MonoBehaviour:
   efficiency_max: 120
   depletion_rate: 4
   depletion_multiplier: 1
-  increase_happiness_rate: 0.8
+  increase_happiness_rate: 7
 --- !u!61 &1382035778
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12956,7 +12956,7 @@ MonoBehaviour:
   efficiency_max: 140
   depletion_rate: 7
   depletion_multiplier: 1
-  increase_happiness_rate: 0.8
+  increase_happiness_rate: 8
 --- !u!61 &1987787005
 BoxCollider2D:
   m_ObjectHideFlags: 0

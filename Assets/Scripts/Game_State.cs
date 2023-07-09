@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Game_State : MonoBehaviour
@@ -20,6 +21,7 @@ public class Game_State : MonoBehaviour
     private float cooling_penalty;
 
     private bool in_mini_game;
+    private bool in_shop;
 
     private double happiness;
 
@@ -35,8 +37,15 @@ public class Game_State : MonoBehaviour
 
     public void Add_Happiness(double val){
         happiness += val;
+        happiness = Math.Round(happiness, 2);
         if (happiness<0) happiness = 0;
 
+    }
+
+    public int Get_Happiness(){
+
+        return ((int)happiness);
+;
 
     }
 
@@ -50,6 +59,21 @@ public class Game_State : MonoBehaviour
 
     public bool Get_In_Mini_Game(){
         return in_mini_game;
+    }
+
+    public void Entered_Shop()
+    {
+        in_shop = true;
+    }
+
+    public void Exited_Shop()
+    {
+        in_shop = false;
+    }
+
+    public bool Get_In_Shop()
+    {
+        return in_shop;
     }
 
     // Update is called once 

@@ -210,7 +210,7 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
     public void OnDrag( PointerEventData eventData ){
 
         //locked==false
-        if (Game_State.Instance.Get_In_Mini_Game()==false) {
+        if (Game_State.Instance.Get_In_Mini_Game()==false && !Game_State.Instance.Get_In_Shop()) {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position=mousePosition;
             transform.position=new Vector3(transform.position.x, transform.position.y, -1); 
@@ -224,7 +224,7 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
     }
  
     public void OnPointerUp( PointerEventData eventData ){
-       if (dragging==false && Game_State.Instance.Get_In_Mini_Game()==false) {
+       if (dragging==false && Game_State.Instance.Get_In_Mini_Game()==false && !Game_State.Instance.Get_In_Shop()) {
             Game_State.Instance.Entered_Mini_Game();
 
             mini_game.SetActive(true);
@@ -262,7 +262,7 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
      }
      public void OnPointerEnter( PointerEventData eventData )
      {
-        if (Game_State.Instance.Get_In_Mini_Game()==false) {
+        if (Game_State.Instance.Get_In_Mini_Game()==false && !Game_State.Instance.Get_In_Shop()) {
             sprite_renderer.sprite = image_hovered;
             info_box.SetActive(true);
         }

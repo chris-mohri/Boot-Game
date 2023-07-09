@@ -106,6 +106,39 @@ public class Shop_Controller : MonoBehaviour
         is_sliding = false;
     }
 
+    public void Close_Tab()
+    {
+        Debug.Log("fart");
+        StartCoroutine(Close_Full());
+    }
+
+    public void Open_Tab()
+    {
+        StartCoroutine(Open_Full());
+    }
+
+    IEnumerator Close_Full()
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            transform.Translate(.205f, 0, 0);
+            yield return new WaitForSeconds(.01f);
+        }
+        shop_state = STATE.Tab;
+        Game_State.Instance.Exited_Shop();
+    }
+
+    IEnumerator Open_Full()
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            transform.Translate(-.205f, 0, 0);
+            yield return new WaitForSeconds(.01f);
+        }
+        shop_state = STATE.Full;
+        Game_State.Instance.Entered_Shop();
+    }
+
     public void Unhover_Tab()
     {
         if(shop_state == STATE.Tab)

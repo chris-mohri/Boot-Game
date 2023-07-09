@@ -62,11 +62,13 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
     private bool dragging;
 
     private int num_collisions;
+    private bool Yet_To_Sleep;
  
     
    
     void Awake()
     {
+        Yet_To_Sleep=true;
         num_collisions=0;
         //drag_started=false;
         initial_DragXY = new Vector2(0,0);
@@ -98,22 +100,53 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
         if (total_depletion_multiplier<0.4)
             total_depletion_multiplier=0.4;
 
-        efficiency_current -= Time.deltaTime * (depletion_rate+additional_depletion_rate) * total_depletion_multiplier;
+        //halves/thirds the additional depletion rate depending on number of hardware
+        int num_parts=1;
+        if (this.name=="GPU")
+            num_parts = Game_State.Instance.Get_Num_GPUS();
+
+        else if (this.name=="CPU")
+            num_parts = Game_State.Instance.Get_Num_CPUS();
+
+        else if (this.name=="HDD")
+            num_parts = Game_State.Instance.Get_Num_Storage();
+
+        else if (this.name=="FAN")
+            num_parts = Game_State.Instance.Get_Num_Cooling();
+
+        else if (this.name=="RAM")
+            num_parts = Game_State.Instance.Get_Num_RAM();
+
+        efficiency_current -= Time.deltaTime * (depletion_rate+(additional_depletion_rate/num_parts)) * total_depletion_multiplier;
 
         //depletes happiness
         if (half_mark==true && efficiency_current <= efficiency_max/2){
-            Game_State.Instance.Add_Happiness(-8);
+            Game_State.Instance.Remove_By_Percent(0.08);
             half_mark=false;
         }
         if (three_quarter_mark==true && efficiency_current <= efficiency_max/4){
-            Game_State.Instance.Add_Happiness(-18);  
+            Game_State.Instance.Remove_By_Percent(0.18);  
             three_quarter_mark=false;
         }
 
-        if (efficiency_current<=0) efficiency_current=0;
+        if (efficiency_current<=0){
+            efficiency_current=0;
+        }
+        if (Yet_To_Sleep && efficiency_current<=0){
+            efficiency_current=0;
+            Game_State.Instance.Add_Sleep_Component();
+            Yet_To_Sleep=false;
+        }
+        
     }
 
     public void Reset(){
+        //if it was dead before reseting, remove it from game_state now
+        if (efficiency_current<=0){
+            Yet_To_Sleep=true;
+            Game_State.Instance.Remove_Sleep_Component();
+        }
+
         half_mark=true;
         three_quarter_mark = true;
 

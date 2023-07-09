@@ -8,6 +8,7 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
 {
     public GameObject[] prefabs;
     public Sprite[] sprites;
+    public Sprite[] dark_sprites;
     public float[] prices;
     private SpriteRenderer sprite_renderer;
 
@@ -46,6 +47,9 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
         current_price = prices[id];
         tmp.text = "$" + current_price;
         can_afford = current_price <= Game_State.Instance.Get_Happiness();
+        Vector2 sprite_size = gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size;
+        gameObject.GetComponent<BoxCollider2D>().size = sprite_size;
+        //gameObject.GetComponent<BoxCollider2D>().offset = new Vector2((sprite_size.x / 2), 0);
     }
 
 
@@ -65,7 +69,13 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
         if (can_afford)
         {
             dragging = true;
-            initial_position = transform.position;
+            initial_position = transform.localPosition;
+            SpriteRenderer sr = current_prefab.transform.GetComponentInChildren<SpriteRenderer>(false);
+            sprite_renderer.sprite = sr.sprite;
+            transform.localScale /= 3.7f;
+            Vector2 sprite_size = gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size;
+            gameObject.GetComponent<BoxCollider2D>().size = sprite_size;
+            transform.parent.parent.GetComponent<Shop_Controller>().Close_Tab();
         }
     }
 
@@ -111,12 +121,18 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
             //if collided
             if (num_collisions > 0)
             {
-                this.gameObject.transform.position = initial_position;
+                transform.parent.parent.GetComponent<Shop_Controller>().Open_Tab();
             }
             else
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+                GameObject fab = Instantiate(current_prefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+                fab.transform.parent = transform.parent.parent.parent;
             }
+            sprite_renderer.sprite = sprites[id];
+            Vector2 sprite_size = gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size;
+            gameObject.GetComponent<BoxCollider2D>().size = sprite_size;
+            this.gameObject.transform.localPosition = initial_position;
+
             dragging = false;
             num_collisions = 0;
         }

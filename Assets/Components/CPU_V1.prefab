@@ -1830,7 +1830,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3440310276518534859}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.14000002, y: 0.87000006, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4071,7 +4071,7 @@ GameObject:
   - component: {fileID: 5363105870472972356}
   m_Layer: 0
   m_Name: CPU_V1
-  m_TagString: Untagged
+  m_TagString: Hardware
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4085,13 +4085,13 @@ Transform:
   m_GameObject: {fileID: 8270986604450366082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.7, y: 3.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7870955012573415329}
   - {fileID: 1330110021095891653}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8402787121651180737
 GameObject:

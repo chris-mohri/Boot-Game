@@ -5214,6 +5214,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: efcf9a7a04ac1bd4c983de8fd84fc1f0, type: 3}
   - {fileID: 21300000, guid: 708d116e3400ad94b9f9bf498f3952b8, type: 3}
   - {fileID: 21300000, guid: 062036cdc384d4e41b889324a99d4064, type: 3}
+  dark_sprites: []
   prices:
   - 0
   - 0
@@ -12256,6 +12257,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3f4d6a079518ab342b496a4ee144a9f3, type: 3}
   - {fileID: 21300000, guid: 1049068ab763e1d4dbed41569b84d9d6, type: 3}
   - {fileID: 21300000, guid: ebf9f51d0bea0a349bd1be52e8f50255, type: 3}
+  dark_sprites: []
   prices:
   - 0
   - 0
@@ -12759,7 +12761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 8505685147066877623, guid: 32082c00b557c184c8245e6f42c364c8, type: 3}
+  - {fileID: 8270986604450366082, guid: 9822c28e857bd9240b9988183d59c35d, type: 3}
   - {fileID: 8505685147066877623, guid: 32082c00b557c184c8245e6f42c364c8, type: 3}
   - {fileID: 8505685147066877623, guid: 32082c00b557c184c8245e6f42c364c8, type: 3}
   - {fileID: 8505685147066877623, guid: 32082c00b557c184c8245e6f42c364c8, type: 3}
@@ -12770,6 +12772,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 477ef3c6753227945847549a5f437c7b, type: 3}
   - {fileID: 21300000, guid: a58bd448152e5b040a37bad169cd8cf8, type: 3}
   - {fileID: 21300000, guid: bd2b43ae0e542f8469ea7fb39a21daf8, type: 3}
+  dark_sprites: []
   prices:
   - 0
   - 0
@@ -13167,6 +13170,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 771193825}
     m_Modifications:
+    - target: {fileID: 1330110021095891653, guid: 9822c28e857bd9240b9988183d59c35d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330110021095891653, guid: 9822c28e857bd9240b9988183d59c35d, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3440310276518534859, guid: 9822c28e857bd9240b9988183d59c35d, type: 3}
       propertyPath: m_TagString
       value: Hardware
@@ -13176,12 +13187,20 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5363105870472972356, guid: 9822c28e857bd9240b9988183d59c35d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363105870472972356, guid: 9822c28e857bd9240b9988183d59c35d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363105870472972356, guid: 9822c28e857bd9240b9988183d59c35d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5363105870472972356, guid: 9822c28e857bd9240b9988183d59c35d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 5363105870472972356, guid: 9822c28e857bd9240b9988183d59c35d, type: 3}
       propertyPath: m_LocalPosition.z

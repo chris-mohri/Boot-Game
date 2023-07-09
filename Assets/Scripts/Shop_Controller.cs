@@ -133,7 +133,7 @@ public class Shop_Controller : MonoBehaviour
         for (int i = 0; i < 30; i++)
         {
             transform.Translate(-.205f, 0, 0);
-            yield return new WaitForSeconds(.005f);
+            yield return new WaitForSeconds(.01f);
         }
         shop_state = STATE.Full;
         Game_State.Instance.Entered_Shop();

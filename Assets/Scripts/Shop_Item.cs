@@ -70,6 +70,7 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
         {
             dragging = true;
             initial_position = transform.localPosition;
+            GetComponentInChildren<TextMeshPro>().gameObject.SetActive(false);
             SpriteRenderer sr = current_prefab.transform.GetComponentInChildren<SpriteRenderer>(false);
             sprite_renderer.sprite = sr.sprite;
             transform.localScale /= 3.7f;
@@ -129,9 +130,11 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
                 fab.transform.parent = transform.parent.parent.parent;
             }
             sprite_renderer.sprite = sprites[id];
+            transform.localScale *= 3.7f;
             Vector2 sprite_size = gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size;
             gameObject.GetComponent<BoxCollider2D>().size = sprite_size;
             this.gameObject.transform.localPosition = initial_position;
+            GetComponentInChildren<TextMeshPro>().gameObject.SetActive(true);
 
             dragging = false;
             num_collisions = 0;

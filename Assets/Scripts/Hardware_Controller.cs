@@ -214,6 +214,7 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
             }
 
             if (this.name=="HDD"){
+                mini_game.GetComponent<HDD_Game>().Start_Game();
 
             }
 

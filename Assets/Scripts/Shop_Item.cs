@@ -71,24 +71,28 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (dragging)
+        if (dragging && col.gameObject.tag=="Hardware")
         {
             num_collisions++;
+            Debug.Log("entered: " + col.gameObject.name + " : " + num_collisions);
         }
-        Debug.Log("entered: " + num_collisions);
+        
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if (dragging)
+        if (dragging && col.gameObject.tag=="Hardware")
         {
             num_collisions--;
+            if (num_collisions<0) num_collisions=0;
+            Debug.Log("exited: " + col.gameObject.name+ " : " + num_collisions);
+
         }
-        Debug.Log("exited: " + num_collisions);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+
         if (can_afford)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

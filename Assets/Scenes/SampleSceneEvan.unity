@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 13034296}
   m_Layer: 0
   m_Name: GPU
-  m_TagString: Untagged
+  m_TagString: Hardware
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 71261057}
   m_Layer: 0
   m_Name: RAM
-  m_TagString: Untagged
+  m_TagString: Hardware
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1499,6 +1499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   desktop_manager: {fileID: 1911523150}
+  On_Button: {fileID: 0}
 --- !u!4 &153527280
 Transform:
   m_ObjectHideFlags: 0
@@ -2183,7 +2184,7 @@ GameObject:
   - component: {fileID: 288206463}
   m_Layer: 0
   m_Name: HDD
-  m_TagString: Untagged
+  m_TagString: Hardware
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3103,7 +3104,7 @@ GameObject:
   - component: {fileID: 392591221}
   m_Layer: 0
   m_Name: border2
-  m_TagString: Untagged
+  m_TagString: Hardware
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4233,7 +4234,7 @@ GameObject:
   - component: {fileID: 676084840}
   m_Layer: 0
   m_Name: border3
-  m_TagString: Untagged
+  m_TagString: Hardware
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6266,7 +6267,7 @@ GameObject:
   - component: {fileID: 1006558641}
   m_Layer: 0
   m_Name: border5
-  m_TagString: Untagged
+  m_TagString: Hardware
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7388,7 +7389,7 @@ GameObject:
   - component: {fileID: 1141859145}
   m_Layer: 0
   m_Name: border6
-  m_TagString: Untagged
+  m_TagString: Hardware
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8657,7 +8658,7 @@ GameObject:
   - component: {fileID: 1522058135}
   m_Layer: 0
   m_Name: border1
-  m_TagString: Untagged
+  m_TagString: Hardware
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8815,7 +8816,7 @@ GameObject:
   - component: {fileID: 1533959934}
   m_Layer: 0
   m_Name: border4
-  m_TagString: Untagged
+  m_TagString: Hardware
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8974,7 +8975,7 @@ GameObject:
   - component: {fileID: 1540703160}
   m_Layer: 0
   m_Name: FAN
-  m_TagString: Untagged
+  m_TagString: Hardware
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10640,6 +10641,8 @@ MonoBehaviour:
   spawn_interval_initial: 10
   spawn_interval_min: 3
   time_to_min: 120
+  image_normal: {fileID: 0}
+  image_blue_screen: {fileID: 0}
 --- !u!212 &1911523151
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13164,6 +13167,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 771193825}
     m_Modifications:
+    - target: {fileID: 3440310276518534859, guid: 9822c28e857bd9240b9988183d59c35d, type: 3}
+      propertyPath: m_TagString
+      value: Hardware
+      objectReference: {fileID: 0}
     - target: {fileID: 5363105870472972356, guid: 9822c28e857bd9240b9988183d59c35d, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -13211,6 +13218,10 @@ PrefabInstance:
     - target: {fileID: 8270986604450366082, guid: 9822c28e857bd9240b9988183d59c35d, type: 3}
       propertyPath: m_Name
       value: CPU_V1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270986604450366082, guid: 9822c28e857bd9240b9988183d59c35d, type: 3}
+      propertyPath: m_TagString
+      value: Hardware
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

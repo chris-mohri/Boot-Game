@@ -30,19 +30,22 @@ public class Game_State : MonoBehaviour
     private int num_sleep_components;
     private int num_dead_components;
 
+    private int num_CPU;
+    private int num_GPU;
+    private int num_RAM;
+    private int num_Storage;
+    private int num_Cooling;
+
     private bool game_over;
+
+
 
     void Awake()
     {
         Instance = this;
 
-        game_started = false;
-        money=0;
-        happiness=100;
-        in_mini_game=false;
-        num_sleep_components=0;
-        num_dead_components=0;
-        game_over=false;
+        Reset_Values();
+
     }
 
     public void Reset_Values(){
@@ -54,6 +57,11 @@ public class Game_State : MonoBehaviour
         num_sleep_components=0;
         num_dead_components=0;
         game_over=false;
+        num_CPU = 1;
+        num_GPU = 1;
+        num_RAM = 1;
+        num_Storage = 1;
+        num_Cooling = 1;
     }
 
     public void Remove_By_Percent(double percent){
@@ -196,5 +204,39 @@ public class Game_State : MonoBehaviour
     public void Add_Cooling_Penalty(float cooling)
     {
         cooling_penalty += cooling;
+    }
+
+    public int Get_Num_CPUS(){
+        return num_CPU;
+    }
+    public int Get_Num_GPUS(){
+        return num_GPU;
+    }
+    public int Get_Num_RAM(){
+        return num_RAM;
+    }
+    public int Get_Num_Storage(){
+        return num_Storage;
+    }
+    public int Get_Num_Cooling(){
+        return num_Cooling;
+    }
+
+// ------------
+
+    public void Add_Num_CPUS(){
+        num_CPU++;
+    }
+    public void Add_Num_GPUS(){
+        num_GPU++;
+    }
+    public void Add_Num_RAM(){
+        num_RAM++;
+    }
+    public void Add_Num_Storage(){
+        num_Storage++;
+    }
+    public void Add_Num_Cooling(){
+        num_Cooling++;
     }
 }

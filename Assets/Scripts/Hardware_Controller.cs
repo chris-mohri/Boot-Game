@@ -60,11 +60,14 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
     SpriteRenderer sprite_renderer;
 
     private bool dragging;
+
+    private int num_collisions;
  
     
    
     void Awake()
     {
+        num_collisions=0;
         //drag_started=false;
         initial_DragXY = new Vector2(0,0);
         info_box.SetActive(false);
@@ -173,12 +176,35 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
 
     public void OnEndDrag( PointerEventData eventData ){
         sprite_renderer.sortingOrder=1;
-        transform.position=new Vector3(transform.position.x, transform.position.y, 0); 
+
+        //if collided
+        if (num_collisions>0){
+            this.gameObject.transform.position = initial_DragXY;
+        }
+        else{
+            transform.position=new Vector3(transform.position.x, transform.position.y, 0); 
+        }
         dragging=false;
+        num_collisions=0;
 
     }
+
+    void OnTriggerEnter2D(Collider2D col){
+        if (dragging)
+            num_collisions++;
+        //Debug.Log("entered");
+    }
+
+    void OnTriggerExit2D(Collider2D col){
+        if (dragging)
+            num_collisions--;
+        //Debug.Log("exited");
+    }
+
+
     public void OnBeginDrag( PointerEventData eventData ){
         dragging=true;
+        initial_DragXY  = gameObject.transform.position;
     }
 
     public void OnDrag( PointerEventData eventData ){
@@ -232,6 +258,7 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
     
      public void OnDrop( PointerEventData eventData )
      {
+
      }
      public void OnPointerEnter( PointerEventData eventData )
      {

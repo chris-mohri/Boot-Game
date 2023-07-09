@@ -982,10 +982,10 @@ MonoBehaviour:
   text: {fileID: 2801350554725447325}
   bar_fill: {fileID: 7077187542198519965}
   mini_game: {fileID: 2735556648694182904}
-  efficiency_max: 90
+  efficiency_max: 175
   depletion_rate: 3
-  depletion_multiplier: 0.5
-  increase_happiness_rate: 4
+  depletion_multiplier: 0.3
+  increase_happiness_rate: 8
 --- !u!50 &3680792374787032384
 Rigidbody2D:
   serializedVersion: 4

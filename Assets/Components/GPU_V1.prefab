@@ -1392,7 +1392,7 @@ MonoBehaviour:
   mini_game: {fileID: 4490249203168742732}
   efficiency_max: 140
   depletion_rate: 5
-  depletion_multiplier: 0.5
+  depletion_multiplier: 0.3
   increase_happiness_rate: 8
 --- !u!50 &6600054870397457122
 Rigidbody2D:

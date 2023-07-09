@@ -11,6 +11,9 @@ public class Game_State : MonoBehaviour
     [SerializeField]
     private Desktop_Manager desktop_manager;
 
+    [SerializeField]
+    private GameObject On_Button;
+
     private bool game_started;
     private int money;
 
@@ -24,6 +27,10 @@ public class Game_State : MonoBehaviour
     private bool in_shop;
 
     private double happiness;
+    private int num_sleep_components;
+    private int num_dead_components;
+
+    private bool game_over;
 
     void Awake()
     {
@@ -33,6 +40,44 @@ public class Game_State : MonoBehaviour
         money=0;
         happiness=100;
         in_mini_game=false;
+        num_sleep_components=0;
+        num_dead_components=0;
+        game_over=false;
+    }
+
+    public void Reset_Values(){
+    
+        game_started = false;
+        money=0;
+        happiness=100;
+        in_mini_game=false;
+        num_sleep_components=0;
+        num_dead_components=0;
+        game_over=false;
+    }
+
+    public void Remove_By_Percent(double percent){
+        happiness *= (1-percent);
+        happiness = Math.Round(happiness, 2);
+
+    }
+
+    public bool Get_Game_Over(){
+        return game_over;
+    }
+
+    public void Add_Sleep_Component(){
+        num_sleep_components++;
+
+        //if game ends
+        if (num_sleep_components>=2){
+            game_over=true;
+            On_Button.SetActive(true);
+            Stop_Game();
+        }
+    }
+    public void Remove_Sleep_Component(){
+        num_sleep_components--;
     }
 
     public void Add_Happiness(double val){
@@ -45,7 +90,6 @@ public class Game_State : MonoBehaviour
     public int Get_Happiness(){
 
         return ((int)happiness);
-;
 
     }
 
@@ -91,6 +135,7 @@ public class Game_State : MonoBehaviour
 
     public void Start_Game(){
         game_started=true;
+        game_over=false;
         CPU_penalty = 0;
         GPU_penalty = 0;
         RAM_penalty = 0;

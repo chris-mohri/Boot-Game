@@ -17,6 +17,12 @@ public class Desktop_Manager : MonoBehaviour
     [SerializeField]
     private float time_to_min = 120; // seconds
 
+    [SerializeField]
+    private Sprite image_normal;
+    [SerializeField]
+    private Sprite image_blue_screen;
+
+
     private IEnumerator spawner;
     //private float time_since_spawn;
     private bool game_started;
@@ -30,6 +36,10 @@ public class Desktop_Manager : MonoBehaviour
         game_started = false;
         spawner = Spawn_Programs();
         random = new System.Random();
+    }
+
+    public void Enter_Blue_Screen(){
+        this.gameObject.GetComponent<SpriteRenderer>().sprite=image_blue_screen;
     }
 
     // Update is called once per frame
@@ -116,6 +126,8 @@ public class Desktop_Manager : MonoBehaviour
     public void Start_Game()
     {
         game_started = true;
+        this.gameObject.GetComponent<SpriteRenderer>().sprite=image_normal;
+
         StartCoroutine(spawner);
         //time_since_spawn = 0;
         spawn_rate = spawn_interval_initial;
@@ -124,7 +136,7 @@ public class Desktop_Manager : MonoBehaviour
 
     public void Stop_Game()
     {
-        Debug.Log("Stop");
+        Enter_Blue_Screen();
         game_started = false;
         StopAllCoroutines();
     }

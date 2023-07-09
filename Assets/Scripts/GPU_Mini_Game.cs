@@ -9,6 +9,10 @@ public class GPU_Mini_Game : MonoBehaviour
     private Hardware_Controller hardware_controller;
     [SerializeField]
     private Sprite[] sprites;
+    //[SerializeField]
+    //private int min_difficulty= 2;
+    //[SerializeField]
+    //private int max_difficulty = 6;
 
     private SpriteRenderer sprite_renderer;
     private Sprite current_sprite;
@@ -43,10 +47,36 @@ public class GPU_Mini_Game : MonoBehaviour
         sequence_playing = true;
         correct_sequence = new List<int>();
         input_sequence = new List<int>();
-        Generate_Sequence(5);
+        Generate_Sequence(Get_Difficulty());
         StartCoroutine(Play_Sequence());
     }
 
+
+    private int Get_Difficulty()
+    {
+        double percent = hardware_controller.Get_Percent_Efficiency();
+        if (percent > .85)
+        {
+            return 2;
+        }
+        else if (percent > .7)
+        {
+            return 3;
+        }
+        else if (percent > .55)
+        {
+            return 4;
+        }
+        else if (percent > .4)
+        {
+            return 5;
+        }
+        else if (percent > .25)
+        {
+            return 6;
+        }
+        return 6;
+    }
 
 
     void Generate_Sequence(int length)
@@ -113,6 +143,7 @@ public class GPU_Mini_Game : MonoBehaviour
     void Win()
     {
         // reset to full, close
+        sprite_renderer.sprite = current_sprite;
         hardware_controller.Reset();
         Debug.Log("Win");
     }

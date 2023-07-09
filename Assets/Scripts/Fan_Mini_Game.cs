@@ -9,6 +9,9 @@ public class Fan_Mini_Game : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     [SerializeField]
     private Hardware_Controller hardware_controller;
 
+    [SerializeField]
+    private GameObject arrows;
+
     private TextMeshPro text;
     private bool clockwise;
     private int revolutions;
@@ -40,6 +43,11 @@ public class Fan_Mini_Game : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         revolutions = Get_Difficulty();
         max_angle = revolutions * 360;
         clockwise = r.Next(2) == 1;
+
+        //change arrows
+        if (arrows!=null)
+            arrows.GetComponent<SpriteRenderer>().flipY=clockwise;
+
         current_angle = 0;
         dragging = false;
         text.text = "Rotations: " + revolutions;
@@ -48,9 +56,9 @@ public class Fan_Mini_Game : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             max_angle *= -1;
             fan.GetComponent<SpriteRenderer>().flipY = true;
         }
-        Debug.Log(revolutions);
-        Debug.Log(max_angle);
-        Debug.Log(clockwise);
+        //Debug.Log(revolutions);
+        //Debug.Log(max_angle);
+        //Debug.Log(clockwise);
         //StartCoroutine(Start_Routine());
     }
 
@@ -98,7 +106,7 @@ public class Fan_Mini_Game : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             fan.GetComponent<SpriteRenderer>().flipY = false;
         }
         hardware_controller.Reset();
-        Debug.Log("Win");
+        //Debug.Log("Win");
     }
 
 
@@ -120,9 +128,9 @@ public class Fan_Mini_Game : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         dragging = true;
         Vector3 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         start_angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        Debug.Log(start_angle);
+        //Debug.Log(start_angle);
         start_angle -= Mathf.Atan2(transform.right.y, transform.right.x) * Mathf.Rad2Deg;
-        Debug.Log(start_angle);
+        //Debug.Log(start_angle);
         last_angle = start_angle;
 
         /*

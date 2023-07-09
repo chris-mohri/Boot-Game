@@ -261,6 +261,7 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
             Game_State.Instance.Entered_Mini_Game();
 
             mini_game.SetActive(true);
+            mini_game.transform.position = new Vector3();
 
             if (this.name=="GPU"){
 

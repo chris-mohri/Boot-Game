@@ -9,11 +9,11 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
     public GameObject[] prefabs;
     public Sprite[] sprites;
     public Sprite[] dark_sprites;
-    public float[] prices;
+    public int[] prices;
     private SpriteRenderer sprite_renderer;
 
     private int id;
-    private float current_price;
+    private int current_price;
     private GameObject current_prefab;
     private TextMeshPro tmp;
     private Vector3 initial_position;
@@ -40,8 +40,9 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
     }
 
 
-    public void Update_Items(int id)
+    public void Update_Items(int i)
     {
+        id = i;
         sprite_renderer.sprite = sprites[id];
         current_prefab = prefabs[id];
         current_price = prices[id];
@@ -70,7 +71,7 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
         {
             dragging = true;
             initial_position = transform.localPosition;
-            GetComponentInChildren<TextMeshPro>().gameObject.SetActive(false);
+            tmp.gameObject.SetActive(false);
             SpriteRenderer sr = current_prefab.transform.GetComponentInChildren<SpriteRenderer>(false);
             sprite_renderer.sprite = sr.sprite;
             transform.localScale /= 3.7f;
@@ -120,7 +121,7 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
             sprite_renderer.sortingOrder = 11;
 
             //if collided
-            if (num_collisions > 0)
+            if (GetComponent<Collider2D>().IsTouchingLayers(-1))
             {
                 transform.parent.parent.GetComponent<Shop_Controller>().Open_Tab();
             }
@@ -128,13 +129,32 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
             {
                 GameObject fab = Instantiate(current_prefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
                 fab.transform.parent = transform.parent.parent.parent;
+                Game_State.Instance.Add_Money(-current_price);
+                switch (id)
+                {
+                    case 0:
+                        Game_State.Instance.Add_Num_CPUS();
+                        break;
+                    case 1:
+                        Game_State.Instance.Add_Num_GPUS();
+                        break;
+                    case 2:
+                        Game_State.Instance.Add_Num_RAM();
+                        break;
+                    case 3:
+                        Game_State.Instance.Add_Num_Cooling();
+                        break;
+                    case 4:
+                        Game_State.Instance.Add_Num_Storage();
+                        break;
+                }
             }
             sprite_renderer.sprite = sprites[id];
             transform.localScale *= 3.7f;
             Vector2 sprite_size = gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size;
             gameObject.GetComponent<BoxCollider2D>().size = sprite_size;
             this.gameObject.transform.localPosition = initial_position;
-            GetComponentInChildren<TextMeshPro>().gameObject.SetActive(true);
+            tmp.gameObject.SetActive(true);
 
             dragging = false;
             num_collisions = 0;

@@ -36,17 +36,11 @@ public class Shop_Controller : MonoBehaviour
 
     public void Icon_Click(int id)
     {
-        if (!items[2].gameObject.activeSelf)
-            items[2].transform.gameObject.SetActive(true);
         Debug.Log(shop_state);
         // update items
         for(int i=0; i<3; i++)
         {
             items[i].Update_Items(id);
-            if(id == 3 && i == 2)
-            {
-                items[i].transform.gameObject.SetActive(false);
-            }
         }
 
         if(shop_state == STATE.Icons)

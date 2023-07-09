@@ -223,13 +223,13 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
     }
 
     void OnTriggerEnter2D(Collider2D col){
-        if (dragging)
+        if (dragging && col.gameObject.tag=="Hardware")
             num_collisions++;
         //Debug.Log("entered");
     }
 
     void OnTriggerExit2D(Collider2D col){
-        if (dragging)
+        if (dragging && col.gameObject.tag=="Hardware")
             num_collisions--;
         //Debug.Log("exited");
     }

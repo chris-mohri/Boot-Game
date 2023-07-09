@@ -2897,7 +2897,7 @@ MonoBehaviour:
   mini_game: {fileID: 116616267}
   efficiency_max: 120
   depletion_rate: 4
-  depletion_multiplier: 1
+  depletion_multiplier: 0.5
   increase_happiness_rate: 6
 --- !u!61 &470931105
 BoxCollider2D:
@@ -4895,7 +4895,7 @@ MonoBehaviour:
   mini_game: {fileID: 1245360823}
   efficiency_max: 90
   depletion_rate: 3
-  depletion_multiplier: 1
+  depletion_multiplier: 0.5
   increase_happiness_rate: 4
 --- !u!61 &889440794
 BoxCollider2D:
@@ -9001,7 +9001,7 @@ MonoBehaviour:
   mini_game: {fileID: 896195632}
   efficiency_max: 100
   depletion_rate: 1.5
-  depletion_multiplier: 1
+  depletion_multiplier: 0.5
   increase_happiness_rate: 8
 --- !u!61 &1274397982
 BoxCollider2D:
@@ -9602,7 +9602,7 @@ MonoBehaviour:
   mini_game: {fileID: 1003589302}
   efficiency_max: 120
   depletion_rate: 4
-  depletion_multiplier: 1
+  depletion_multiplier: 0.5
   increase_happiness_rate: 7
 --- !u!61 &1382035778
 BoxCollider2D:
@@ -9774,9 +9774,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   all_programs:
-  - {fileID: 5982590675384955497, guid: 4ea3753d2c0150f4ba61db23de360152, type: 3}
+  - {fileID: 9209796164243308714, guid: 3dc4b34009b3fbd41a655e7830138a2f, type: 3}
   - {fileID: 2668708726730408385, guid: 3a777b963ec67334f885809cb750aeee, type: 3}
   - {fileID: 9209796164243308714, guid: 3d56c2b0fdd94134182b3ae1347384d4, type: 3}
+  - {fileID: 9209796164243308714, guid: 54f79d9df43840c4fb9efbd6e8096b27, type: 3}
+  - {fileID: 9209796164243308714, guid: 5d28ea20876191740bf506a7564d9e3d, type: 3}
   spawn_rate: 0
   spawn_interval_initial: 10
   spawn_interval_min: 3
@@ -13705,8 +13707,8 @@ MonoBehaviour:
   bar_fill: {fileID: 1149023377}
   mini_game: {fileID: 364545189}
   efficiency_max: 140
-  depletion_rate: 7
-  depletion_multiplier: 1
+  depletion_rate: 5
+  depletion_multiplier: 0.5
   increase_happiness_rate: 8
 --- !u!61 &1987787005
 BoxCollider2D:

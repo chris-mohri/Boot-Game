@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d1f6b462a2f9c749bbb317924473f5b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2517d372c249ef4419e897bce0257f16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,9 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alive_time: 0
   desktop_manager: {fileID: 0}
-  prefab: {fileID: 0}
+  prefab: {fileID: 2668708726730408385}
   cpu_penalty: 0
-  gpu_penalty: 0
+  gpu_penalty: 2
   ram_penalty: 1
   cooling_penalty: 0
   storage_penalty: 0

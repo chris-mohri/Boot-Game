@@ -1245,12 +1245,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 319f1dd4ef1d3e340934653705cd2bfb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d7ee6948b4a7aa14d9bc1cc4aaa5badb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.8, y: 2.7}
+  m_Size: {x: 2.12, y: 2.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5676,11 +5676,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 0abd7f72f433cce4596e215e833d954d, type: 3}
-  - {fileID: 21300000, guid: 7f4d4775f4ba811478cc758dcd2cfb90, type: 3}
-  - {fileID: 21300000, guid: 4bc1f133cb9136d44902a2a5f8fb430a, type: 3}
-  - {fileID: 21300000, guid: 2d670cc6b53b3484b9351d575bd22494, type: 3}
-  - {fileID: 21300000, guid: 99e77a42da15a3e48977e0493fe4aa0f, type: 3}
+  - {fileID: 21300000, guid: 335392085795c7b439ec7d7ae105d7ea, type: 3}
+  - {fileID: 21300000, guid: 15ff8d5c7e23e644b9732cf54f72f291, type: 3}
+  - {fileID: 21300000, guid: efcf9a7a04ac1bd4c983de8fd84fc1f0, type: 3}
+  - {fileID: 21300000, guid: 708d116e3400ad94b9f9bf498f3952b8, type: 3}
+  - {fileID: 21300000, guid: 062036cdc384d4e41b889324a99d4064, type: 3}
   prices:
   - 0
   - 0
@@ -15063,11 +15063,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 24f0b35529090f0488268bebbffe5997, type: 3}
-  - {fileID: 21300000, guid: 3f9520e5fa352ed458451cccd83c424c, type: 3}
-  - {fileID: 21300000, guid: 0484ece5936908b42be0d97f83542a2c, type: 3}
-  - {fileID: 21300000, guid: 168ea2676456aa6419310ca3b5d99747, type: 3}
-  - {fileID: 21300000, guid: 01a6c0a8c1c6e7c47953c9ee4df85b1f, type: 3}
+  - {fileID: 21300000, guid: 28f5dec17675ff648b1a4f113a262ce7, type: 3}
+  - {fileID: 21300000, guid: d8b761ce0f7c5894a8dafc7d05f7fcf6, type: 3}
+  - {fileID: 21300000, guid: 3f4d6a079518ab342b496a4ee144a9f3, type: 3}
+  - {fileID: 21300000, guid: 1049068ab763e1d4dbed41569b84d9d6, type: 3}
+  - {fileID: 21300000, guid: ebf9f51d0bea0a349bd1be52e8f50255, type: 3}
   prices:
   - 0
   - 0
@@ -15907,11 +15907,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 97d6b338ff046b34aa618ee201946198, type: 3}
-  - {fileID: 21300000, guid: 8e4ad38b9d814b440ba3f99895d22e62, type: 3}
-  - {fileID: 21300000, guid: 719fffc32a82d774f9056ae6790cf21d, type: 3}
-  - {fileID: 21300000, guid: 7d9287297243bc64d97c14a9c40b1faa, type: 3}
-  - {fileID: 21300000, guid: 100d3dae6eff16447b0e8344ec75932e, type: 3}
+  - {fileID: 21300000, guid: 7467c4aa875b3a44ab415804c8c828f8, type: 3}
+  - {fileID: 21300000, guid: 0311805662e17da418b894cd90f2974e, type: 3}
+  - {fileID: 21300000, guid: 477ef3c6753227945847549a5f437c7b, type: 3}
+  - {fileID: 21300000, guid: a58bd448152e5b040a37bad169cd8cf8, type: 3}
+  - {fileID: 21300000, guid: bd2b43ae0e542f8469ea7fb39a21daf8, type: 3}
   prices:
   - 0
   - 0

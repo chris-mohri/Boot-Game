@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDragHandler
 {
-    //public GameObject[] prefabs;
+    public GameObject[] prefabs;
     public Sprite[] sprites;
     public float[] prices;
     private SpriteRenderer sprite_renderer;
@@ -16,6 +16,9 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
     private GameObject current_prefab;
     private TextMeshPro tmp;
     private Vector3 initial_position;
+    private bool dragging;
+    private int num_collisions;
+    private bool can_afford;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,8 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
         sprite_renderer = this.GetComponent<SpriteRenderer>();
         tmp = transform.Find("Text").GetComponent<TextMeshPro>();
         id = 0;
+        dragging = false;
+        num_collisions = 0;
         Update_Items(id);
     }
 
@@ -37,9 +42,10 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
     public void Update_Items(int id)
     {
         sprite_renderer.sprite = sprites[id];
-        //current_prefab = prefabs[id];
+        current_prefab = prefabs[id];
         current_price = prices[id];
         tmp.text = "$" + current_price;
+        can_afford = current_price <= Game_State.Instance.Get_Happiness();
     }
 
 
@@ -55,44 +61,61 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        /*
-        dragging = true;
-        initial_DragXY = gameObject.transform.position;
-        */
+        //num_collisions = 0;
+        if (can_afford)
+        {
+            dragging = true;
+            initial_position = transform.position;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (dragging)
+        {
+            num_collisions++;
+        }
+        Debug.Log("entered: " + num_collisions);
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (dragging)
+        {
+            num_collisions--;
+        }
+        Debug.Log("exited: " + num_collisions);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        /*
-        //locked==false
-        if (Game_State.Instance.Get_In_Mini_Game() == false && !Game_State.Instance.Get_In_Shop())
+        if (can_afford)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mousePosition;
             transform.position = new Vector3(transform.position.x, transform.position.y, -1);
-            sprite_renderer.sortingOrder = 2;
-            //Get_Restricted_Position();
+            sprite_renderer.sortingOrder = 12;
         }
-        */
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        /*
-        sprite_renderer.sortingOrder = 1;
+        if (can_afford)
+        {
+            sprite_renderer.sortingOrder = 11;
 
-        //if collided
-        if (num_collisions > 0)
-        {
-            this.gameObject.transform.position = initial_DragXY;
+            //if collided
+            if (num_collisions > 0)
+            {
+                this.gameObject.transform.position = initial_position;
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+            }
+            dragging = false;
+            num_collisions = 0;
         }
-        else
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-        }
-        dragging = false;
-        num_collisions = 0;
-        */
 
     }
 }

@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class On_Button_Controller : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.position=new Vector3(transform.position.x, transform.position.y, transform.position.z-0.1f); 
+
     }
 
     // Update is called once per frame
@@ -23,6 +25,8 @@ public class On_Button_Controller : MonoBehaviour
             //player had already lost and blue screen
             if (Game_State.Instance.Get_Game_Over()==true){
                 //restart scene
+                Game_State.Instance.Reset_Values();
+                SceneManager.LoadScene("SampleSceneChris");
             }
             //otherwise proceed as normal
             else

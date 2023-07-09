@@ -3838,7 +3838,7 @@ Transform:
   m_GameObject: {fileID: 547838672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.4539, y: 0.7867, z: 0}
-  m_LocalScale: {x: 0.5642306, y: 0.33975175, z: 1}
+  m_LocalScale: {x: 0.5642306, y: 0.33975175, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1268859841}
@@ -5271,7 +5271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &706575480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17357,7 +17357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   desktop_manager: {fileID: 1384013695}
-  On_Button: {fileID: 0}
+  On_Button: {fileID: 547838672}
 --- !u!4 &2101700934
 Transform:
   m_ObjectHideFlags: 0

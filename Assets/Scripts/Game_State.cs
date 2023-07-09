@@ -45,6 +45,17 @@ public class Game_State : MonoBehaviour
         game_over=false;
     }
 
+    public void Reset_Values(){
+    
+        game_started = false;
+        money=0;
+        happiness=100;
+        in_mini_game=false;
+        num_sleep_components=0;
+        num_dead_components=0;
+        game_over=false;
+    }
+
     public void Remove_By_Percent(double percent){
         happiness *= (1-percent);
         happiness = Math.Round(happiness, 2);
@@ -61,8 +72,8 @@ public class Game_State : MonoBehaviour
         //if game ends
         if (num_sleep_components>=2){
             game_over=true;
-            Stop_Game();
             On_Button.SetActive(true);
+            Stop_Game();
         }
     }
     public void Remove_Sleep_Component(){

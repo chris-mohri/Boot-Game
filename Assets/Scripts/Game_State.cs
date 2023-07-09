@@ -21,6 +21,7 @@ public class Game_State : MonoBehaviour
     private float cooling_penalty;
 
     private bool in_mini_game;
+    private bool in_shop;
 
     private double happiness;
 
@@ -58,6 +59,21 @@ public class Game_State : MonoBehaviour
 
     public bool Get_In_Mini_Game(){
         return in_mini_game;
+    }
+
+    public void Entered_Shop()
+    {
+        in_shop = true;
+    }
+
+    public void Exited_Shop()
+    {
+        in_shop = false;
+    }
+
+    public bool Get_In_Shop()
+    {
+        return in_shop;
     }
 
     // Update is called once 

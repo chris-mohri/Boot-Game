@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Game_State : MonoBehaviour
@@ -35,8 +36,15 @@ public class Game_State : MonoBehaviour
 
     public void Add_Happiness(double val){
         happiness += val;
+        happiness = Math.Round(happiness, 2);
         if (happiness<0) happiness = 0;
 
+    }
+
+    public int Get_Happiness(){
+
+        return ((int)happiness);
+;
 
     }
 

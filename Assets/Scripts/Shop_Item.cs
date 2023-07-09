@@ -129,7 +129,7 @@ public class Shop_Item : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDra
             {
                 GameObject fab = Instantiate(current_prefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
                 fab.transform.parent = transform.parent.parent.parent;
-                Game_State.Instance.Add_Money(-current_price);
+                Game_State.Instance.Add_Happiness(-current_price);
                 switch (id)
                 {
                     case 0:

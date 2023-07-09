@@ -47,7 +47,7 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
     private double additional_depletion_rate=0.00;
 
     //[SerializeField]
-    public double depletion_multiplier = 1.00; //base multiplier for depletion_rate
+    public double depletion_multiplier = 0.6; //base multiplier for depletion_rate
 
     public double increase_happiness_rate = 0.8;
 
@@ -121,12 +121,12 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
         efficiency_current -= Time.deltaTime * (depletion_rate+(additional_depletion_rate/num_parts)) * total_depletion_multiplier;
 
         //depletes happiness
-        if (half_mark==true && efficiency_current <= efficiency_max/2){
-            Game_State.Instance.Remove_By_Percent(0.08);
+        if (half_mark==true && efficiency_current <= efficiency_max/4){
+            Game_State.Instance.Remove_By_Percent(0.05);
             half_mark=false;
         }
-        if (three_quarter_mark==true && efficiency_current <= efficiency_max/4){
-            Game_State.Instance.Remove_By_Percent(0.18);  
+        if (three_quarter_mark==true && efficiency_current == 0){
+            Game_State.Instance.Remove_By_Percent(0.10);  
             three_quarter_mark=false;
         }
 

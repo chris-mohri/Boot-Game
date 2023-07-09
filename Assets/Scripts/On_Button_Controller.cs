@@ -37,6 +37,14 @@ public class On_Button_Controller : MonoBehaviour
         this.gameObject.SetActive(false);     
     }
 
+    void OnMouseEnter(){
+        transform.Find("Shadow").gameObject.SetActive(true);
+    }
+
+    void OnMouseExit(){
+        transform.Find("Shadow").gameObject.SetActive(false);
+    }
+
     /*
             
             */

@@ -176,7 +176,6 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
         transform.position=new Vector3(transform.position.x, transform.position.y, 0); 
         dragging=false;
 
-
     }
     public void OnBeginDrag( PointerEventData eventData ){
         dragging=true;
@@ -190,7 +189,7 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
             transform.position=mousePosition;
             transform.position=new Vector3(transform.position.x, transform.position.y, -1); 
             sprite_renderer.sortingOrder=2;
-
+            Get_Restricted_Position();
         }
     }
     
@@ -247,6 +246,31 @@ public class Hardware_Controller : MonoBehaviour, IPointerClickHandler, IPointer
         info_box.SetActive(false);
      }
 
- }
 
 
+    void Get_Restricted_Position()
+    {
+        float bottom_border = Camera.main.ViewportToWorldPoint(new Vector3(0, .01f, 0)).y;
+        float top_border = Camera.main.ViewportToWorldPoint(new Vector3(0, .99f, 0)).y;
+        float right_border = Camera.main.ViewportToWorldPoint(new Vector3(.99f, 0, 0)).x;
+        Collider2D lower_left_border = transform.parent.Find("Borders").Find("Left").GetComponent<Collider2D>();
+        float left_top_border = Camera.main.ViewportToWorldPoint(new Vector3(0, .58f, 0)).y;
+        float upper_left_border = Camera.main.ViewportToWorldPoint(new Vector3(.62f, 0, 0)).x;
+
+        Collider2D collider = transform.GetComponent<Collider2D>();
+        float width = transform.GetComponent<Renderer>().bounds.size.x/2;
+
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 new_position = transform.position;
+
+        if(collider.IsTouching(lower_left_border) && transform.position.x-mousePosition.x <= 0)
+        {
+            Debug.Log("Piss");
+            new_position.x = lower_left_border.transform.position.x + width;
+        }
+        
+
+        transform.position = new_position;
+
+    }
+}
